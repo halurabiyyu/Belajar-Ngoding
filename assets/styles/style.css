@@ -1,0 +1,118 @@
+/*mengganti font menggunakan google font*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/*mengganti font pada konten body*/
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+   padding: 0;
+}
+
+/*membuat jumbotrin pada header*/
+.jumbotron {
+   font-size: 20px;
+   padding: 60px;
+   background-color: #00c8eb;
+   text-align: center;
+   color: white;
+}
+
+main {
+   padding: 20px;
+   overflow:auto;
+}
+
+/*mengganti warna pada header 2 dan 3*/
+h2, h3 {
+    color: #00a2c6
+}
+
+/*menerapkan card style pada semua article*/
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.featured-image {
+   width: 100%;
+   max-height: 300px;
+   object-fit: cover;
+   object-position: center;
+}
+
+header {
+   display: inline;
+}
+
+nav {
+   background-color: #00a2c6;
+   padding: 5px;
+   position: sticky;
+   top: 0;
+}
+
+nav li {
+   display: inline;
+   list-style-type: none;
+   margin-right: 20px;
+}
+
+ nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+ }
+/*menambahkan efek tebal pada elemen "a" ketika disorot oleh kursor*/
+ nav a:hover {
+    font-weight: bold;
+ }
+/*merapihkan header dengan class profile menjadi center text*/
+ .profile header {
+    text-align: center;
+ }
+
+ .profile img {
+   width: 200px;
+}
+ table {
+   margin: 10px 15px;
+   /*menggunakan shorthand untuk membuat border yang terdiri dari "width", "style", "color"*/
+   border: 4px dashed #00a2c6;
+   width: 200px;
+   padding: 10px
+}
+
+/*menambahkan padding pada bagian footer*/
+footer {
+   padding: 10px;
+   color: white;
+   text-align: center;
+   font-weight: bold;
+   background-color: #00a2c6
+}
+
+/*menetapkan float pada content dan aside*/
+#content {
+   float: left;
+   width: 75%;
+ }
+ aside {
+   float: right;
+   width: 25%;
+   padding-left: 20px;
+ }
+
+ * {
+   box-sizing: border-box;
+ }
+
+ @media screen and (max-width: 1000px) {
+   #content,
+   aside {
+       width: 100%;
+       padding: 0;
+   }
+}
