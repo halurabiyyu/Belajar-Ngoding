@@ -106,3 +106,27 @@ const id = Symbol("id"); //Symbol
     for(let i = 0; i < 5; i++) {
         console.log(i);
     }
+
+/*Object
+    Object mampu menyimpan nilai dari beragam tipe data dan membentuk data yang lebih kompleks
+    untuk menetapkan objek pada sebuah variabel menggunakan tanda kurung kurawal*/
+    const usr = {};
+    /*object berisi pasangan key dan value yang juga dikenal dgn property*/
+    const user = {
+        firstName: "Luke",
+        lastName: "Skywalker", 
+        age: 19, 
+        isJedi: true};
+    //firstName adalah key dan Luke adalah value
+
+/*Array
+    merupakan tipe data yang dapat mengelompokkan lebih dari satu nilai dan menempatkannya dalam satu variabel.
+    array juga disusun secara berurutan dan diakses menggunakan index. untuk mengakses nilai di dalam array,
+    kita gunakan tanda kurung su=iku yang didalamnya berisi angka yang merupakan posisi nilai yang ingin diakses. */
+    let myArray = ["Cokelat", 42.5, 22, true, "Programming"];
+    console.log(myArray[1]);
+
+    /*untuk menambahkan data ke dalam array, bisa menggunakan metode push()*/
+    myArray.push('Javascript');
+    console.log(myArray);
+    
