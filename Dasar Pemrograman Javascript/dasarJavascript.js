@@ -329,7 +329,7 @@ console.log("-------Map-------");
     jonas = null;                    // Data object "Jonas" dihapus
 
     // delay dibutuhkan untuk menunggu garbage collector bekerja
-    setTimeout(function() {
+    /*setTimeout(function() {
         console.log(visitsCountMap);
     }, 10000)
     /*setTimeout merupakan fungsi yang digunakan untuk menunda eksekusi kode yang ada di dalamnya hingga jangka waktu yang ditetapkan.*/
@@ -350,7 +350,121 @@ console.log("-------Map-------");
     halur = null;                    // Data object "Jonas" dihapus
 
     // delay dibutuhkan untuk menunggu garbage collector bekerja
-    setTimeout(function() {
+    /*setTimeout(function() {
     console.log(inspect(visitsCountWeakMap, { showHidden: true }));
-    }, 10000);
+    }, 10000);*/
 
+/*Declaring Function
+    Fungsi merupakan bagian penting dalam bahasa pemrograman. Fungsi dalam pemrograman juga digunakan untuk menghasilkan output berdasarkan input tertentu.
+    Namun, Fungsi juga bisa digunakan sebagai blok kode atau prosedur yang dapat digunakan secara berulang.
+    Fungsi dideklarasikan dengan keyword function dan nama fungsinya.*/
+    function multiply(t, p) {
+        return t*p;
+    };
+
+    /*Kita dapat membuat fungsi tersebut untuk menerima dan memanfaatkan parameter untuk mengubah perilaku dari fungsinya.
+    Untuk menambahkan parameter pada fungsi, tambahkan variabel di dalam tanda kurung fungsi. 
+    Namun, variabel tersebut tidak memerlukan keyword var, let, ataupun const. 
+    Kita juga bisa menambahkan lebih dari satu parameter dengan memberikan tanda koma antar variabel parameternya.*/
+    function greeting(name, language) {
+        if(language === "English") {
+            console.log(`Good Morning ${name}!`);
+        } else if (language === "French") {
+            console.log(`Bonjour ${name}!`);
+        } else {
+            console.log(`Selamat Pagi ${name}!`);
+        }
+    }
+    greeting("Harry", "French");
+
+    /*Satu hal lagi, function dapat menghasilkan output atau mengembalikan sebuah nilai. 
+    Dengan nilai kembalian, kita dapat membuat function yang berfungsi untuk melakukan perhitungan matematika 
+    dan hasilnya dapat kita masukkan ke dalam sebuah variabel.*/
+    function multiply(a, b) {
+        return a * b;
+    }
+    
+    let result = multiply(10, 2)
+    console.log(result)
+
+    /*Rest Parameter
+        Rest parameter juga dituliskan menggunakan three consecutive dots (...). 
+        Dengan rest parameter, kita dapat menggabungkan beberapa elemen menjadi satu array.*/
+        function sum(...numbers) {
+            let result = 0;
+            for (let number of numbers) {
+                result += number;
+            }
+            return result;
+        }
+        
+        console.log(sum(1, 2, 3, 4, 5));
+    
+    /*Arrow Function
+        Arrow function mirip seperti regular function secara perilaku, tetapi berbeda dalam penulisannya. 
+        Sesuai namanya, fungsi didefinisikan menggunakan tanda panah atau fat arrow ( => ).*/
+        const sayHello = (greet) => {
+            console.log(`${greet}!`)
+        }
+        sayHello(halo);
+
+        /*Satu hal yang menarik, ketika body dari function hanya terdiri dari satu baris, kita bisa menghapus tanda kurung kurawal. 
+        Tentunya ini akan menghemat baris kode yang kita tulis.*/
+        const sayName = name => console.log(`Nama saya ${name}`);
+        sayName("Leia");
+
+    /*Variabel Scope
+        Variabel yang dapat diakses dari seluruh script disebut dengan “globally scoped”, 
+        sementara variabel yang hanya diakses hanya pada fungsi tertentu disebut dengan “locally scoped”.*/
+        // global variable, dapat diakses pada parent() dan child()
+        const c = 'a'; 
+ 
+        function parent() {
+            // local variable, dapat diakses pada parent() dan child(), tetapi tidak dapat diakses di luar dari fungsi tersebut.
+            const b = 'b'; 
+    
+            function child() {
+                // local variable, dapat diakses hanya pada fungsi child().
+                const o = 'c';
+            }
+        }
+
+    /*Closure
+        Suatu fungsi yang dapat mengakses variabel di dalam lexical scope-nya
+        Lexical scope berarti pada sebuah fungsi bersarang, fungsi yang berada di dalam memiliki akses ke variabel di lingkup induknya.*/
+        function init() {
+            var name = 'Obi Wan';   // Variabel lokal di dalam scope fungsi init
+            
+            function greet() {      // Inner function, merupakan contoh closure
+                console.log(`Halo, ${name}`);   // Memanggil variabel yang dideklarasikan di parent function
+            }
+        
+            greet();
+        }
+        
+        init();;
+        /*Fungsi init() memiliki variabel lokal name dan fungsi greet(). 
+        Fungsi greet() adalah inner function yang didefinisikan di dalam init() dan hanya bisa diakses dari dalam fungsi init(). 
+        Perhatikan bahwa fungsi greet() tidak memiliki variabel lokal. Namun, karena inner function memiliki akses ke variabel di parent function-nya, 
+        sehingga greet() dapat mengakses variabel name. Itulah yang dimaksud dengan lexical scope.*/
+        function minimal(a, b){
+            if(a<b){
+                return a;
+            }else if(a>b){
+                return b;
+            }else{
+                return a;
+            }
+        };
+        minimal(1, 4);
+        minimal(3, 2);
+        minimal(3, 3);
+        
+        function power(a, b){
+            let total;
+            total = a**b;
+            return total;
+        }
+        power(7, 3);
+        power(3, 3);
+        power(4, 0.5);
